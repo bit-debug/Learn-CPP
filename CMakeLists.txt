@@ -9,8 +9,8 @@ include_directories(src /opt/homebrew/Cellar/fmt/7.1.3/include /opt/homebrew/Cel
 
 
 # add the executable
-add_executable(main main.cpp)
+add_executable(main.run main.cpp)
 
 find_library(FMT fmt /opt/homebrew/Cellar/fmt/7.1.3/lib)
 find_library(SPDLOG spdlog /opt/homebrew/Cellar/spdlog/1.8.5/lib)
-target_link_libraries(main LINK_PUBLIC ${FMT} ${SPDLOG})
+target_link_libraries(main.run LINK_PUBLIC ${FMT} ${SPDLOG})
