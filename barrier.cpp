@@ -5,7 +5,7 @@
 #include <mutex>
 #include <condition_variable>
 
-const int N = 3;
+const int N = 8;
 std::mutex m;
 std::condition_variable cv;
 int cnt = 0;
@@ -20,8 +20,8 @@ void worker_thread()
         cv.notify_all();
     }
     else {
-        std::cout << "worker-thread-" << cnt << " waits" << std::endl;
-        cv.wait(lock, [] { return cnt == 3; });
+        std::cout << "worker-" << cnt << " waits" << std::endl;
+        cv.wait(lock, [] { return cnt == N; });
         lock.unlock();
     }
     
