@@ -40,6 +40,10 @@ public:
         this->svalue = std::move(rhs.svalue);
         return *this;
     }
+
+    ~A() {
+        std::cout << "Destructor, ivalue = " << ivalue << std::endl;
+    }
 };
 
 class A_A : public A {
