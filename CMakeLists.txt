@@ -7,10 +7,6 @@ project(LEARN)
 
 include_directories(src /opt/homebrew/Cellar/fmt/7.1.3/include /opt/homebrew/Cellar/spdlog/1.8.5/include)
 
-
+set(SOURCE_FILE "main.cpp" CACHE STRING "User specified source file, default to 'main.cpp'")
 # add the executable
-add_executable(main enable_if.cpp)
-
-# find_library(FMT fmt /opt/homebrew/Cellar/fmt/7.1.3/lib)
-# find_library(SPDLOG spdlog /opt/homebrew/Cellar/spdlog/1.8.5/lib)
-# target_link_libraries(main.run LINK_PUBLIC ${FMT} ${SPDLOG})
+add_executable(main ${SOURCE_FILE})
